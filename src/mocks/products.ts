@@ -1,0 +1,1 @@
+export { defaultProducts as products, type Product } from './productsData';
