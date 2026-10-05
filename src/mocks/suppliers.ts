@@ -1,0 +1,44 @@
+import type { Supplier } from "@/types";
+
+export const mockSuppliers: Supplier[] = [
+  {
+    id: "s1",
+    name: "Fiambres del Sur",
+    cuit: "30-71234567-4",
+    contact: "Marcelo Ruiz",
+    phone: "11 4455-8899",
+    address: "Av. Rivadavia 4520, CABA",
+    notes: "Entrega martes y viernes.",
+    active: true,
+  },
+  {
+    id: "s2",
+    name: "Carnes Patagonicas",
+    cuit: "30-70998877-1",
+    contact: "Laura Mendez",
+    phone: "11 6677-1122",
+    address: "Ruta 3 Km 42, Gonzalez Catan",
+    notes: "Pedido minimo 20 kg.",
+    active: true,
+  },
+  {
+    id: "s3",
+    name: "Panaderia San Jose",
+    cuit: "20-34556677-9",
+    contact: "Jose Fernandez",
+    phone: "11 2233-4455",
+    address: "Calle Belgrano 1220, Lanus",
+    notes: "Pan fresco diario.",
+    active: true,
+  },
+  {
+    id: "s4",
+    name: "Embutidos Tandil",
+    cuit: "30-70112233-8",
+    contact: "Sergio Benitez",
+    phone: "11 8899-3344",
+    address: "Parque Industrial, Tandil",
+    notes: "Fiambres y embutidos artesanales.",
+    active: true,
+  },
+];
