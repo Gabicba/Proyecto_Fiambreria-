@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-heading: 'Sora', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-label: 'Inter', system-ui, sans-serif;
+
+  /* background — warm cream canvas */
+  --background-50: 0.985 0.006 90;
+  --background-100: 0.965 0.009 90;
+  --background-200: 0.93 0.012 90;
+  --background-300: 0.885 0.014 88;
+  --background-400: 0.80 0.016 86;
+  --background-500: 0.70 0.016 84;
+  --background-600: 0.60 0.015 82;
+  --background-700: 0.50 0.014 80;
+  --background-800: 0.40 0.013 78;
+  --background-900: 0.30 0.012 76;
+  --background-950: 0.20 0.010 74;
+
+  /* foreground — warm near black text scale */
+  --foreground-50: 0.97 0.006 70;
+  --foreground-100: 0.93 0.008 70;
+  --foreground-200: 0.86 0.010 68;
+  --foreground-300: 0.75 0.012 66;
+  --foreground-400: 0.62 0.014 64;
+  --foreground-500: 0.50 0.016 62;
+  --foreground-600: 0.40 0.016 60;
+  --foreground-700: 0.32 0.015 58;
+  --foreground-800: 0.24 0.014 56;
+  --foreground-900: 0.18 0.013 54;
+  --foreground-950: 0.13 0.011 52;
+
+  /* primary — coral red brand */
+  --primary-50: 0.96 0.02 27;
+  --primary-100: 0.92 0.05 27;
+  --primary-200: 0.86 0.09 27;
+  --primary-300: 0.78 0.13 27;
+  --primary-400: 0.68 0.18 27;
+  --primary-500: 0.60 0.205 27;
+  --primary-600: 0.53 0.195 27;
+  --primary-700: 0.45 0.17 27;
+  --primary-800: 0.38 0.14 27;
+  --primary-900: 0.32 0.11 27;
+  --primary-950: 0.24 0.08 27;
+
+  /* accent — warm gold */
+  --accent-50: 0.97 0.02 80;
+  --accent-100: 0.94 0.05 80;
+  --accent-200: 0.90 0.09 78;
+  --accent-300: 0.85 0.13 76;
+  --accent-400: 0.80 0.16 74;
+  --accent-500: 0.76 0.17 72;
+  --accent-600: 0.68 0.16 70;
+  --accent-700: 0.58 0.14 68;
+  --accent-800: 0.48 0.12 66;
+  --accent-900: 0.40 0.10 64;
+  --accent-950: 0.30 0.07 62;
+
+  /* secondary — warm taupe */
+  --secondary-50: 0.97 0.008 65;
+  --secondary-100: 0.94 0.012 64;
+  --secondary-200: 0.89 0.016 63;
+  --secondary-300: 0.82 0.02 62;
+  --secondary-400: 0.72 0.025 61;
+  --secondary-500: 0.62 0.03 60;
+  --secondary-600: 0.54 0.032 59;
+  --secondary-700: 0.46 0.032 58;
+  --secondary-800: 0.38 0.03 57;
+  --secondary-900: 0.31 0.028 56;
+  --secondary-950: 0.24 0.022 55;
+
+  /* semantic status */
+  --success: 0.60 0.14 150;
+  --success-soft: 0.95 0.035 150;
+  --warning: 0.70 0.15 63;
+  --warning-soft: 0.96 0.05 70;
+  --danger: 0.57 0.20 27;
+  --danger-soft: 0.95 0.04 27;
+  --info: 0.52 0.03 60;
+  --info-soft: 0.94 0.012 62;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: oklch(var(--background-100));
+  color: oklch(var(--foreground-900));
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+button,
+input,
+select,
+textarea,
+label {
+  font-family: var(--font-label);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: oklch(var(--background-300));
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: oklch(var(--background-400));
+}
+
+/* Ticket / comprobante imprimible */
+.receipt-print-portal {
+  display: none;
+}
+
+@media print {
+  html,
+  body {
+    height: auto !important;
+    background: #ffffff !important;
+  }
+
+  #root {
+    display: none !important;
+  }
+
+  .receipt-print-portal {
+    display: block !important;
+  }
+
+  .receipt-print-portal .receipt-sheet {
+    width: 80mm;
+    max-width: 80mm;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  @page {
+    margin: 6mm;
+  }
+}

@@ -1,0 +1,113 @@
+import type { Account, PaymentMethod, User } from "@/types";
+
+// Un medio de pago es el COMO cobra (Efectivo, Transferencia, Mercado Pago...).
+// La CUENTA es el destino/origen concreto del dinero (ver Account.methodId).
+export const mockPaymentMethods: PaymentMethod[] = [
+  { id: "m1", name: "Efectivo", active: true },
+  { id: "m2", name: "Transferencia", active: true },
+  { id: "m3", name: "Mercado Pago", active: true },
+  { id: "m4", name: "Debito", active: true },
+  { id: "m5", name: "Credito", active: true },
+];
+
+export const mockAccounts: Account[] = [
+  {
+    id: "a1",
+    name: "Caja Efectivo",
+    type: "efectivo",
+    typeLabel: "Efectivo",
+    active: true,
+    initialBalance: 45000,
+    methodId: "m1",
+    retail: true,
+    wholesale: true,
+    note: "Efectivo del local.",
+  },
+  {
+    id: "a2",
+    name: "Banco X",
+    type: "banco",
+    typeLabel: "Transferencia / Banco",
+    active: true,
+    initialBalance: 320000,
+    methodId: "m2",
+    retail: true,
+    wholesale: true,
+    note: "",
+  },
+  {
+    id: "a3",
+    name: "Bancor Rosi",
+    type: "banco",
+    typeLabel: "Transferencia / Banco",
+    active: true,
+    initialBalance: 128500,
+    methodId: "m2",
+    retail: false,
+    wholesale: true,
+    note: "Solo ventas mayoristas.",
+  },
+  {
+    id: "a4",
+    name: "Mercado Pago Coti",
+    type: "billetera",
+    typeLabel: "Billetera virtual",
+    active: true,
+    initialBalance: 76400,
+    methodId: "m3",
+    retail: true,
+    wholesale: true,
+    note: "",
+  },
+  {
+    id: "a5",
+    name: "Posnet Bancor",
+    type: "tarjeta",
+    typeLabel: "Tarjeta",
+    active: true,
+    initialBalance: 0,
+    methodId: "m4",
+    retail: true,
+    wholesale: true,
+    note: "Debito.",
+  },
+  {
+    id: "a6",
+    name: "Capital guardado",
+    type: "otro",
+    typeLabel: "Otro",
+    active: true,
+    initialBalance: 500000,
+    methodId: "",
+    retail: false,
+    wholesale: false,
+    note: "No disponible para cobros de venta.",
+  },
+];
+
+export const mockUsers: User[] = [
+  {
+    id: "u1",
+    name: "Rosa Gimenez",
+    username: "admin",
+    password: "admin123",
+    role: "admin",
+    roleLabel: "Administrador",
+  },
+  {
+    id: "u2",
+    name: "Carla Diaz",
+    username: "vendedor",
+    password: "vende123",
+    role: "vendedor-minorista",
+    roleLabel: "Vendedor Minorista",
+  },
+  {
+    id: "u3",
+    name: "Diego Sosa",
+    username: "mayorista",
+    password: "mayor123",
+    role: "vendedor-mayorista",
+    roleLabel: "Vendedor Mayorista",
+  },
+];
